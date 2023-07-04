@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <legend><h4>Exercicio 4 - Lista 2</h4></legend>
+
+        <form action="">
+
+            <h2>BANCO LAGUNA</h2>
+
+            
+            <input type="text" id="idNome" name="nmNome" placeholder="Nome do Correntista:"><br><br>
+            
+
+            <input type="number" id="idAgencia" name="nmAgencia" placeholder="Nº da Agência:"><br><br>
+            
+            
+            <input type="number" id="idConta" name="nmConta" placeholder="Nº da Conta:"><br><br>
+            
+
+            <label for="idLimite">Limite de Crédito Pessoal:</label><br>
+            
+            
+            <input type="text" id="idLimite" name="nmLimite" value="R$ 5.000,00" disabled><br><br>
+
+            <label for="idOpera">Depósitos / Saques</label><br>
+            <input type="number" id="idOpera" name="nmOpera"><br><br>
+
+            <input type="button" value="Depositar" onclick="deposito()">
+            <input type="button" value="Sacar" onclick="saque()"><br><br>
+
+            <b>Extrato:</b><br><br>
+
+            <output id="idOutNome"></output><br>
+            <output id="idOutAgencia"></output><br>
+            <output id="idOutConta"></output><br><br>
+
+            <output id="idOut">Saldo Atual:</output><br><br>
+
+            
+        </form>
+
+    </fieldset>
+    
+    <script>
+        
+        var operacao = 0
+        var contasaldo = 0
+        function deposito() {
+            var nome = document.getElementById("idNome").value
+            var agencia = Number(document.getElementById("idAgencia").value)
+            var conta = Number(document.getElementById("idConta").value)
+
+
+            operacao = operacao + Number(document.getElementById("idOpera").value)
+            
+            contasaldo = contasaldo + 1
+            console.log("Soma Saldo " + operacao)
+                        
+            document.getElementById("idOutNome").value = "Nome: " + nome
+            document.getElementById("idOutAgencia").value = "Agência: " + agencia
+            document.getElementById("idOutConta").value = "Conta: " + conta
+
+            document.getElementById("idOut").value = "Saldo Atual: " + operacao
+                       
+        }
+
+
+        function saque() {
+            var nome = document.getElementById("idNome").value
+            var agencia = Number(document.getElementById("idAgencia").value)
+            var conta = Number(document.getElementById("idConta").value)
+
+
+            operacao = operacao + ( - Number(document.getElementById("idOpera").value))
+            
+            contasaldo = contasaldo + 1
+            console.log("Soma Saldo " + operacao)
+            
+            document.getElementById("idOutNome").value = "Nome: " + nome
+            document.getElementById("idOutAgencia").value = "Agência: " + agencia
+            document.getElementById("idOutConta").value = "Conta: " + conta
+
+
+            document.getElementById("idOut").value = "Saldo Atual: " + operacao
+
+                       
+        }
+
+
+    </script>
+
+
+</body>
+</html>

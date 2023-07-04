@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <form action="">
+            <legend>Exercício 2</legend>
+
+            <label for="idCampo1">Campo1</label><br>
+            <input type="number" id="idCampo1" name="nmCampo1"><br><br>
+
+            <label for="idCampo2">Campo2</label><br>
+            <input type="number" id="idCampo2" name="nmCampo2"><br><br>
+
+            <input type="button" value="Soma!" onclick="somaAi()"><br><br>
+
+            <label for="idCampo3">Campo 3</label><br>
+            <input type="number" id="idCampo3" name="nmCampo3"><br><br>
+
+
+
+        </form>
+    </fieldset>
+
+
+    <script>
+
+        var campo1
+        var campo2
+        var campo3
+        /*
+        function somaAi() {
+
+            campo1 = document.getElementById("idCampo1").value
+            campo2 = document.getElementById("idCampo2").value
+            campo3 = document.getElementById("idCampo3")
+
+            campo3.value = parseFloat(campo1) + parseFloat(campo2);
+
+
+
+        }
+        */
+        function somaAi() {
+            campo1 = parseFloat(document.getElementById("idCampo1").value);
+            campo2 = parseFloat(document.getElementById("idCampo2").value);
+            campo3 = document.getElementById("idCampo3")
+
+            campo3.value = campo1 + campo2
+        }
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+
+        <label for="idPrimeiroNumero">Primeiro número:</label><br>
+        <input type="number" id="idPrimeiroNumero" name="nmPrimeiroNumero"><br><br>
+
+        <label for="idSegundoNumero">Segundo número:</label><br>
+        <input type="number" id="idSegundoNumero" name="nmSegundoNumero"><br><br>
+
+        <output id="idOut"></output><br><br>
+
+        <input type="button" value="Testar" onclick="testar()"><br><br>
+
+    </div>
+
+
+    <script>
+
+        function testar() {
+
+            var primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            var segundoNumero = Number(document.getElementById("idSegundoNumero").value)
+            var output = document.getElementById("idOut")
+
+            if (primeiroNumero > segundoNumero) {
+                output.value = "O número " + primeiroNumero + " é maior."
+            } else {
+                output.value = "O número " + segundoNumero + " é maior."
+            }
+
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <legend>Exercicio 3 - Lista 2</legend>
+        <form action="">
+
+            <label for="idTemp3">Temperatura 3 dias atrás:</label><br>
+            <input type="number" id="idTemp3" name="nmTemp3"><br><br>
+
+            <label for="idTemp2">Temperatura 2 dias atrás:</label><br>
+            <input type="number" id="idTemp2" name="nmTemp2"><br><br>
+
+            <label for="idTemp1">Temperatura Ontem:</label><br>
+            <input type="number" id="idTemp1" name="nmTemp1"><br><br>
+
+            <label for="idTempHoje">Temperatura Hoje:</label><br>
+            <input type="number" id="idTempHoje" name="nmTempHoje"><br><br>
+
+            <output id="idOut1">Média dos últimos 3 dias:</output><br>
+            <output id="idOut2"></output><br>
+
+            <input type="button" value="Calcular" onclick="temperatura()"><br>
+            
+
+        </form>
+    </fieldset>
+
+    <script>
+
+        function temperatura() {
+            var temperatura3 = Number(document.getElementById("idTemp3").value)
+            var temperatura2 = Number(document.getElementById("idTemp2").value)
+            var temperatura1 = Number(document.getElementById("idTemp1").value)
+            var temperaturaHoje = Number(document.getElementById("idTempHoje").value)
+
+            var media = ((temperatura3 + temperatura2 + temperatura1) / 3).toFixed(1)
+
+            document.getElementById("idOut1").value = "Média dos últimos 3 dias: " + media + "ºC"
+
+            if (temperaturaHoje < media) {
+                document.getElementById("idOut2").value = "Sua temperatura hoje está abaixo da média dos últimos 3 dias!"
+            } else {
+                document.getElementById("idOut2").value = "Sua temperatura hoje está acima da média dos últimos 3 dias!"
+            }
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>

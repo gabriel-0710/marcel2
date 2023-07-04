@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <legend>Sexto Exercício - Lista 2</legend>
+        <form action="">
+
+            <label for="idPrimeiro">Primeiro número:</label><br>
+            <input type="number" id="idPrimeiro" name="nmPrimeiro"><br><br>
+
+            <label for="idSegundo">Segundo número:</label><br>
+            <input type="number" id="idSegundo" name="nmSegundo"><br><br>
+
+            <!--RADIO BUTTON-->
+            <input type="radio" id="idMulti" name="nmRadio" checked>
+            <label for="idMulti">*</label>
+
+            <input type="radio" id="idSub" name="nmRadio">
+            <label for="idSub">-</label>
+
+            <input type="radio" id="idAdd" name="nmRadio">
+            <label for="idAdd">+</label>
+
+            <input type="radio" id="idDiv" name="nmRadio">
+            <label for="idDiv">/</label><br><br>
+
+            <!--OUTPUT-->
+            <output id="idOut"></output><br><br>
+
+            <!--BUTTON-->
+            <input type="button" value="Calcular" onclick="calcular()"><br><br>
+
+
+            
+        </form>
+    </fieldset>
+
+        <script>
+
+            
+
+            function calcular() {
+
+                var primeiro = Number(document.getElementById("idPrimeiro").value)
+                var segundo = Number(document.getElementById("idSegundo").value)
+
+                var multi = document.getElementById("idMulti").checked
+                var sub = document.getElementById("idSub").checked
+                var add = document.getElementById("idAdd").checked
+                var div = document.getElementById("idDiv").checked
+
+                var output = document.getElementById("idOut")
+
+                if (multi) {
+                output.value = (primeiro * segundo)
+                console.log("multiplica")
+                } else if (sub) {
+                    output.value = (primeiro - segundo)
+                    console.log("subtrai")
+                } else if (add) {
+                    output.value = (primeiro + segundo)
+                    console.log("adição")
+                } else if (div) {
+                    output.value = (primeiro / segundo)
+                    console.log("divisão")
+                } else {
+                    output.value = "Erro"
+                }
+            }
+                /*
+                if (sub) {
+                    output.value = (primeiro - segundo)
+                    console.log("subtrai")
+                } 
+
+                if (add) {
+                    output.value = (primeiro + add)
+                    console.log("adição")
+                } 
+
+                if (div) {
+                    output.value = (primeiro / segundo)
+                    console.log("divisão")
+                }
+
+            }
+*/
+
+
+        </script>
+
+
+
+</body>
+</html>

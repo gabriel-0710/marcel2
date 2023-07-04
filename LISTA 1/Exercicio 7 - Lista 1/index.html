@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7 - Lista 1</title>
+</head>
+<body>
+    
+    <fieldset>
+        <legend>Exercício 7</legend>
+        <form action="">
+
+            <label for="idCompra">Preço de Compra:</label><br>
+            <input type="number" id="idCompra" name="nmCompra"><br><br>
+
+            <label for="idCustos">Custos Fixos:</label><br>
+            <input type="number" id="idCustos" name="nmCustos"><br><br>
+
+            <label for="idMargem">Margem de Lucro:</label><br>
+            <input type="text" id="idMargem" name="nmMargem" value="35%" disabled><br><br>
+
+            <input type="button" value="Calcular Preço de Venda" onclick="negocio()"><br><br>
+
+            <label for="idVenda">Preço de Venda:</label><br>
+            <input type="text" id="idVenda" name="nmVenda"><br><br>
+        </form>
+    </fieldset>
+
+    <script>
+
+        function negocio() {
+
+            var compra = Number(document.getElementById("idCompra").value)
+            var custos = Number(document.getElementById("idCustos").value)
+            var venda = document.getElementById("idVenda")
+            var porcentagem = Number("1.35")
+
+            venda.value = (compra + custos) * porcentagem;
+
+
+        }
+
+    </script>
+
+</body>
+</html>

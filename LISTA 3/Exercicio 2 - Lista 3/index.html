@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="idPrimeiroNumero">Primeiro número:</label><br>
+    <input type="number" id="idPrimeiroNumero" name="nmPrimeiroNumero"><br><br>
+
+    <label for="idSegundoNumero">Segundo número:</label><br>
+    <input type="number" id="idSegundoNumero" name="nmSegundoNumero"><br><br>
+
+    <label for="idTerceiroNumero">Terceiro número:</label><br>
+    <input type="number" id="idTerceiroNumero" name="nmTerceiroNumero"><br><br>
+
+    <output id="idOut"></output><br><br>
+
+    <input type="button" value="Testar" onclick="testar()"><br><br>
+
+    <script>
+
+        function testar() {
+
+            var primeiro = Number(document.getElementById("idPrimeiroNumero").value)
+            var segundo = Number(document.getElementById("idSegundoNumero").value)
+            var terceiro = Number(document.getElementById("idTerceiroNumero").value)
+            var output = document.getElementById("idOut")
+
+            if (primeiro > segundo && primeiro > terceiro) {
+                output.value = primeiro
+                console.log("O primeiro número é o maior")
+            } else if (segundo > primeiro && segundo > terceiro) {
+                output.value = segundo
+                console.log("O segundo número é o maior")
+            } else if (terceiro > primeiro && terceiro > segundo) {
+                output.value = terceiro
+                console.log("O terceiro número é o maior")
+            } else {
+                output.value = "Os três números são iguais"
+                console.log("Os três números são iguais")
+            }
+
+
+
+
+
+
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

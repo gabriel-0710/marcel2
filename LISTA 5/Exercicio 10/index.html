@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        
+    <label>Converter de: </label>
+    <br>
+    <br>
+    <label>Moeda: </label>
+    <input type="text" id="idMoeda">
+    <select id="idMoedaOrigem">
+        <option value="Real" selected>Real</option>
+        <option value="Dólar Americano">Dólar Americano</option>
+        <option value="Dólar Canadense">Dólar Canadense</option>
+        <option value="Euro">Euro</option>
+        <option value="Libra Esterlina">Libra Esterlina</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>Para: </label><br><br>
+
+    <label>Moeda: </label>
+
+    <select id="idMoedaSaida">
+        <option value="Real" selected>Real</option>
+        <option value="Dólar Americano">Dólar Americano</option>
+        <option value="Dólar Canadense">Dólar Canadense</option>
+        <option value="Euro">Euro</option>
+        <option value="Libra Esterlina">Libra Esterlina</option>
+    </select>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="converter()">Converter</button>
+    <input type="reset" value="Limpar">
+    
+
+    <br>
+    <br>
+
+    <label>Conversão: </label>
+    <label id="idResultado"></label>
+
+
+    </form>
+
+        <script>
+            function converter() {
+    
+                var valor = Number(document.getElementById("idMoeda").value);
+                var idMoedaOrigem = document.getElementById("idMoedaOrigem").value;
+    
+                var idMoedaSaida = document.getElementById("idMoedaSaida").value;
+
+
+    
+                switch (idMoedaOrigem) {
+                    case "Real":
+                        switch (idMoedaSaida) {
+                            case "Real":
+                                document.getElementById("idResultado").innerText = valor + " Reais";
+                                break;
+                            case "Dólar Americano":
+                                document.getElementById("idResultado").innerText = (valor * 4.82).toFixed(2) + " Dólares Americanos";
+                                break;
+                            case "Dólar Canadense":
+                                document.getElementById("idResultado").innerText = (valor * 3.8).toFixed(2) + " Dólares Canadenses";
+                                break;
+                            case "Euro":
+                                document.getElementById("idResultado").innerText = (valor * 5.13).toFixed(2) + " Euros";
+                                break;
+                            case "Libra Esterlina":
+                                document.getElementById("idResultado").innerText = (valor * 6.01).toFixed(2) + " Libras Esterlinas";
+                                break;
+                        }
+                        break;
+                    case "Dólar Americano":
+                        switch (idMoedaSaida) {
+                            case "Real":
+                                document.getElementById("idResultado").innerText = (valor / 4.82).toFixed(2) + " Reais";
+                                break;
+                            case "Dólar Americano":
+                                document.getElementById("idResultado").innerText = valor + " Dólares Americanos";
+                                break;
+                            case "Dólar Canadense":
+                                document.getElementById("idResultado").innerText = (valor * 1.27).toFixed(2) + " Dólares Canadenses";
+                                break;
+                            case "Euro":
+                                document.getElementById("idResultado").innerText = (valor * 0.94).toFixed(2) + " Euros";
+                                break;
+                            case "Libra Esterlina":
+                                document.getElementById("idResultado").innerText = (valor * 0.80).toFixed(2) + " Libras Esterlinas";
+                                break;
+                        }
+                        break;
+                    case "Dólar Canadense":
+                        switch (idMoedaSaida) {
+                            case "Real":
+                                document.getElementById("idResultado").innerText = (valor * 3.80).toFixed(2) + " Reais";
+                                break;
+                            case "Dólar Americano":
+                                document.getElementById("idResultado").innerText = (valor * 0.78).toFixed(2) + " Dólares Americanos";
+                                break;
+                            case "Dólar Canadense":
+                                document.getElementById("idResultado").innerText = valor + " Dólares Canadenses";
+                                break;
+                            case "Euro":
+                                document.getElementById("idResultado").innerText = (valor * 0.74).toFixed(2) + " Euros";
+                                break;
+                            case "Libra Esterlina":
+                                document.getElementById("idResultado").innerText = (valor * 0.63).toFixed(2) + " Libras Esterlinas";
+                                break;
+                        }
+                        break;
+                    case "Euro":
+                        switch (idMoedaSaida) {
+                            case "Real":
+                                document.getElementById("idResultado").innerText = (valor * 5.13).toFixed(2) + " Reais";
+                                break;
+                            case "Dólar Americano":
+                                document.getElementById("idResultado").innerText = (valor * 1.065).toFixed(2) + " Dólares Americanos";
+                                break;
+                            case "Dólar Canadense":
+                                document.getElementById("idResultado").innerText = (valor * 1.35).toFixed(2) + " Dólares Canadenses";
+                                break;
+                            case "Euro":
+                                document.getElementById("idResultado").innerText = valor + " Euros";
+                                break;
+                            case "Libra Esterlina":
+                                document.getElementById("idResultado").innerText = (valor * 0.85).toFixed(2) + "Libras Esterlinas";
+                                break;
+                        }
+                        break;
+                    case "Libra Esterlina":
+                        switch (idMoedaSaida) {
+                            case "Real":
+                                document.getElementById("idResultado").innerText = (valor * 6.01).toFixed(2) + " Reais";
+                                break;
+                            case "Dólar Americano":
+                                document.getElementById("idResultado").innerText = (valor * 1.25).toFixed(2) + " Dólares Americanos";
+                                break;
+                            case "Dólar Canadense":
+                                document.getElementById("idResultado").innerText = (valor * 1.58).toFixed(2) + " Dólares Canadenses";
+                                break;
+                            case "Euro":
+                                document.getElementById("idResultado").innerText = (valor * 1.17).toFixed(2) + " Euros";
+                                break;
+                            case "Libra Esterlina":
+                                document.getElementById("idResultado").innerText = valor + " Libras Esterlinas";
+                                break;
+                        }
+                }
+            }
+
+
+        </script>
+
+
+
+</body>
+</html>

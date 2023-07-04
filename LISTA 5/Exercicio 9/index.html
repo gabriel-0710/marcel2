@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Temperaturas</title>
+</head>
+<body>
+    
+        <label>Converter de: </label>
+        <br>
+        <br>
+        <label>Temperatura: </label>
+        <input type="text" id="temperaturaOrigem">
+        <select id="escalaOrigem">
+            <option value="C" selected>C</option>
+            <option value="F">F</option>
+            <option value="K">K</option>
+        </select>
+
+        <br>
+        <br>
+
+        <label>Para: </label><br><br>
+
+        <label>Escala: </label>
+
+        <select id="escalaConversao">
+            <option value="C" selected>C</option>
+            <option value="F">F</option>
+            <option value="K">K</option>
+        </select>
+
+        <br>
+        <br>
+
+        <button onclick="converter()">Converter</button>
+
+        <br>
+        <br>
+
+        <label>Conversão: </label>
+        <label id="idResultado"></label>
+
+
+
+        <script>
+            function converter() {
+    
+                var temperaturaOrigem = Number(document.getElementById("temperaturaOrigem").value);
+                var escalaOrigem = document.getElementById("escalaOrigem").value;
+    
+                var escalaConversao = document.getElementById("escalaConversao").value;
+    
+                switch (escalaOrigem) {
+                    case "C":
+                        switch (escalaConversao) {
+                            case "C":
+                                document.getElementById("idResultado").innerText = temperaturaOrigem + " ºC";
+                                break;
+                            case "F":
+                                document.getElementById("idResultado").innerText = (temperaturaOrigem * 1.8) + 32 + " ºF";
+                                break;
+                            case "K":
+                                document.getElementById("idResultado").innerText = temperaturaOrigem + 273.15 + ' K';
+                                break;
+                        }
+                        break;
+                    case "F":
+                        switch (escalaConversao) {
+                            case "C":
+                                document.getElementById("idResultado").innerText = (temperaturaOrigem - 32) / 1.8 + " ºC";
+                                break;
+                            case "F":
+                                document.getElementById("idResultado").innerText = temperaturaOrigem + " ºF";
+                                break;
+                            case "K":
+                                document.getElementById("idResultado").innerText = (temperaturaOrigem + 459.67) * 5 / 9 +
+                                    ' K';
+                                break;
+                        }
+                        break;
+                    case "K":
+                        switch (escalaConversao) {
+                            case "C":
+                                document.getElementById("idResultado").innerText = temperaturaOrigem - 273.15 + ' ºC';
+                                break;
+                            case "F":
+                                document.getElementById("idResultado").innerText = (temperaturaOrigem * 9 / 5) - 459.67 +
+                                    ' ºF';
+                                break;
+                            case "K":
+                                document.getElementById("idResultado").innerText = temperaturaOrigem + ' K';
+                                break;
+                        }
+                        break;
+                }
+            }
+        </script>
+</body>
+</html>

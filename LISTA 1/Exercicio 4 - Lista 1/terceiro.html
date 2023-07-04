@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <legend>Cálculo de IMC</legend><br>
+
+            <label for="idAltura">Altura em Metros:</label>  <br>  
+            <input type="number" id="idAltura" name="nmAltura"><br><br>
+
+            <label for="idPeso">Peso em Kg:</label><br>
+            <input type="number" id="idPeso" name="nmPeso"><br><br>
+            <!--  
+            <input type="radio" name="nmGenero" id="idFem">
+            <label for="idFem">Feminino</label>
+
+            <input type="radio" name="nmGenero" id="idMas">
+            <label for="idMas">Masculino</label><br><br>
+            -->
+          
+
+            <input type="button" value="Calcular" onclick="calculando()"><br><br>
+
+            <output id="idOut">IMC:</output><br><br>
+
+            
+
+
+
+
+
+        </form>
+    </fieldset><br>
+
+    <script>
+       
+
+        function calculando() {
+            var altura = Number(document.getElementById("idAltura").value)
+            //var masculino = document.getElementById("idMas").checked
+            //var feminino = document.getElementById("idFem").checked
+            var peso = Number(document.getElementById("idPeso").value)
+            var formula = (peso / (altura * altura)).toFixed(2)
+            //var resultado = document.getElementById("idResultado")
+            var mensagem
+            
+            if ((formula >= 16) && (formula <= 16.9)) {
+                mensagem = "Muito Abaixo do Peso"
+            }
+            if ((formula > 16.9) && (formula <= 18.4)) {
+                mensagem = "Abaixo do Peso"
+            }
+            if ((formula > 18.4) && (formula <= 24.9)) {
+                mensagem = "Peso Normal"
+            }
+            if ((formula > 24.9) && (formula <= 29.9)) {
+                mensagem = "Acima do Peso"
+            }
+            if ((formula > 29.9) && (formula <= 34.9)) {
+                mensagem = "Obesidade Grau I"
+            }
+            if ((formula > 34.9) && (formula <= 40)) {
+                mensagem = "Obesidade Grau II"
+            }
+            if (formula > 40) {
+                mensagem = "Obesidade Grau III"
+            }
+
+            
+            document.getElementById("idOut").value = "IMC: " + formula + " - " + mensagem
+            
+
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

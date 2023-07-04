@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <fieldset>
+        <form action="">
+            <legend>Exercício 1</legend>
+            <label for="idPrimeiroCampo">Campo 1</label><br>
+            <input type="text" id="idPrimeiroCampo" nm="nmPrimeiroCampo"><br><br>
+
+            <input type="button"    value="CTRL V!!" onclick="copiaValor()"><br><br>
+
+            <label for="idSegundoCampo">Campo 2</label><br>
+            <input type="text" id="idSegundoCampo" nm="nmPrimeiroCampo">
+
+        </form>
+    </fieldset>
+
+    <script>
+        var valorCampo1
+        var valorCampo2
+
+        function copiaValor() {
+            valorCampo1 = document.getElementById("idPrimeiroCampo").value;
+            valorCampo2 = document.getElementById("idSegundoCampo")
+
+            valorCampo2.value = valorCampo1;
+        }
+        
+        /*
+        var valorCampo1
+        var valorCampo2
+
+        function copiaCola() {
+            valorCampo1 = document.getElementById("idPrimeiroCampo").value
+            valorCampo2 = document.getElementById("idSegundoCampo")
+            console.log("Valor do campo 1: " + valorCampo1);
+            valorCampo2 = valorCampo1
+        }
+*/
+        
+        
+
+    </script>
+
+
+</body>
+</html>

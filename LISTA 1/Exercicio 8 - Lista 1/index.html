@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8 - Lista 1</title>
+</head>
+
+
+<body>
+    <fieldset>
+        <legend><b>Exercicio 8 - Lista 1</b></legend>
+        <fieldset>
+            <legend>Calcular Área do Circulo</legend>
+            <form action="">
+                <label for="idRaio">Raio do Circulo:</label><br>
+                <input type="number" id="idRaio" name="nmRaio"><br><br>
+    
+                <input type="button" value="Calcular" onclick="areaCirculo()"><br><br>
+    
+                <label for="idResultadoCirculo">Resultado:</label><br>
+                <input type="text" id="idResultadoCirculo" name="nmResultado"><br>
+    
+    
+            </form>
+        </fieldset><br>
+        
+        <fieldset>
+            <legend>Calcular Área do Retangulo</legend>
+
+            <label for="idBaseRetangulo">Base Retângulo:</label><br>
+            <input type="number" id="idBaseRetangulo" name="nmBaseRetangulo"><br><br>
+
+            <label for="idAlturaRetangulo">Altura Retângulo:</label><br>
+            <input type="number" id="idAlturaRetangulo" name="nmAlturaRetangulo"><br><br>
+
+            <input type="button" value="Calcular" onclick="areaRetangulo()"><br><br>
+
+            <label for="idResultadoRetangulo">Resultado:</label><br>
+            <input type="text" id="idResultadoRetangulo" name="nmResultadoRetangulo"><br>
+
+        </fieldset> <br>
+        
+        <fieldset>
+            <legend>Calcular Área do Triângulo Retângulo:</legend>
+
+            <label for="idBaseTrianguloRet">Base do Triângulo Retângulo:</label><br>
+            <input type="number" id="idBaseTrianguloRet" name="nmBaseTrianguloRet"><br><br>
+
+            <label for="idAlturaTrianguloRet">Altura do Triângulo Retângulo:</label><br>
+            <input type="number" id="idAlturaTrianguloRet" name="nmAlturaTrianguloRet"><br><br>
+
+            <input type="button" value="Calcular" onclick="areaTrianguloRet()"><br><br>
+
+            <label for="idResultadoTrianguloRet">Resultado:</label><br>
+            <input type="text" id="idResultadoTrianguloRet" name="nmResultadoTrianguloRet"><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Calcular Área do Triângulo Equilátero:</legend>
+
+            <form action="">
+
+                <label for="idLadoTriangulo">Lado do Triângulo:</label><br>
+                <input type="number" id="idLadoTriangulo" name="nmLadoTriangulo"><br><br>
+
+                <input type="button" value="Calcular" onclick="areaTrianguloEq()"><br><br>
+
+                <label for="idResultadoTrianguloEq">Resultado:</label><br>
+                <input type="text" id="idResultadoTrianguloEq" name="nmResultadoTrianguloEq"><br><br>
+
+            </form>
+        </fieldset><br>
+
+    </fieldset>
+
+<script>
+    function areaCirculo() {
+        var raio = Number(document.getElementById("idRaio").value)
+        var resultado = document.getElementById("idResultadoCirculo")
+
+        resultado.value = Math.PI * raio**2
+
+    }
+
+    function areaRetangulo() {
+        var base = Number(document.getElementById("idBaseRetangulo").value)
+        var altura = Number(document.getElementById("idAlturaRetangulo").value)
+        var resultado = document.getElementById("idResultadoRetangulo")
+
+        resultado.value = base * altura
+
+    }
+
+    function areaTrianguloRet() {
+        var base = Number(document.getElementById("idBaseTrianguloRet").value)
+        var altura = Number(document.getElementById("idAlturaTrianguloRet").value)
+        var resultado = document.getElementById("idResultadoTrianguloRet")
+
+        resultado.value = (base * altura) / 2
+
+    }
+
+    function areaTrianguloEq() {
+        var lado = Number(document.getElementById("idLadoTriangulo").value)
+        var resultado = document.getElementById("idResultadoTrianguloEq")
+
+        resultado.value = ((lado**3) * Math.sqrt(3)) / 4
+
+
+    }
+
+
+
+
+
+</script>
+       
+
+
+
+</body>
+</html>

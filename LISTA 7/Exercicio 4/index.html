@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="idTemperatura">Cadastrar últimas 30 Temperaturas:</label><br>
+    <input type="number" id="idTemperatura" name="Temperatura"/><br><br>
+
+    <input type="button" value="Salvar" id="idSalvar" onclick="salvar()"/><br><br>
+
+    <input type="button" value="Calcular Média" id="idBotaoMedia" onclick="media()"/><br><br>
+
+    <output id="idOut1"></output><br/><br>
+
+    <label for="idDia">Informe a temperatura do dia:</label><br>
+    <input type="number" id="idDia" name="dia"/><br><br>
+
+    <input type="button" value="Comparar" id="idBotaoComparar" onclick="diaHoje()"/><br><br>
+
+    <output id="idOut2"></output><br/>
+    
+    <script>
+        var temperatura = []
+        var somaTemp = 0
+        var mediaMes
+        const limite = 30
+
+       
+        function salvar() {
+            if (temperatura.length < limite) {
+                let temp = Number(document.getElementById("idTemperatura").value)
+                temperatura.push(temp)
+                somaTemp = somaTemp + temp
+
+                console.log(temperatura)
+                console.log(somaTemp)
+                
+            } else {
+                document.getElementById("idTemperatura").disabled = true
+            }                      
+            
+            }
+
+        function media() {
+            
+            mediaMes = document.getElementById("idOut1").value = "Média últimos 30d:  " + (somaTemp / temperatura.length) + " °C"
+            }
+
+        function diaHoje() 
+        {
+        const tempDia = document.getElementById("idDia").value
+
+        if (tempDia < mediaMes) {
+                document.getElementById("idOut2").value = "Sua temperatura está abaixo da média do mês"
+            } else {
+                document.getElementById("idOut2").value = "Sua temperatura está acima da média do mês"
+            }
+        
+        }
+    </script>
+
+
+
+</body>
+</html>

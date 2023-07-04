@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        <h3>Qual é a capital do Brasil?</h3>
+        
+        <input type="text" id="idCapital" name="nmCapital" placeholder="Digite aqui"><br><br>
+
+        <input type="button" value="Enviar Resposta" onclick="resposta()"><br><br>
+
+        <output id="idOut">A resposta está:</output><br><br>
+
+    </form>
+
+    <script>
+
+        function resposta() {
+
+            var capital = document.getElementById("idCapital").value
+            var br1 = 'Brasília'
+            var br2 = 'brasília'
+
+
+
+            if ((capital == br1) || (capital == br2)) {
+                document.getElementById("idOut").value = "A resposta está: Certa!"
+            } else {
+                document.getElementById("idOut").value = "A resposta está: Errada!"
+            }
+
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

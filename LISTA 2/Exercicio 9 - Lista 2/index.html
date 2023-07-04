@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="idAno">Ano de Nascimento:</label><br>
+    <input type="number" id="idAno" name="nmAno"><br><br>
+
+    <input type="button" value="Verificar" onclick="alistamento()"><br><br>
+
+    <output id="idOut">Estou apto para o alistamento? Resposta:</output><br><br>
+
+
+    <script>
+
+        function alistamento() {
+
+            var ano = Number(document.getElementById("idAno").value)
+            var hoje = 2022
+            var idade = 18
+            resultado = hoje - ano
+            
+            mostra1 = resultado - idade
+            mostra2 = idade - resultado
+
+            console.log(resultado)
+            
+
+            if (resultado > 18) {
+                console.log("VAI SE ALISTAR SEU MERDA")
+                document.getElementById("idOut").value = "Estou apto para o alistamento? Resposta: Você já devia ter se alistado! Já faz(em) " + mostra1 + " ano(s) que você deveria ter se apresentado!"
+            }
+            
+            if (resultado < 18) {
+                console.log("VAI CRESCER SEU MERDA")
+                document.getElementById("idOut").value = "Estou apto para o alistamento? Resposta: Não! Você ainda é muito jovem! Ainda falta(m) " + mostra2 + " ano(s) pro seu alistamento!"
+            }
+
+            if (resultado == 18) {
+                console.log("É TEU ANOOOOO PRIMOO")
+                document.getElementById("idOut").value = "Estou apto para o alistamento? Resposta: Vamos lá! É o seu ano!"
+            }
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

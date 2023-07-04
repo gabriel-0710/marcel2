@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="idPrimeiroNumero">Primeiro número:</label><br>
+    <input type="number" id="idPrimeiroNumero" name="nmPrimeiroNumero"><br><br>
+
+    <output id="idOut"></output><br><br>
+
+    <input type="button" value="Imprimir" onclick="teste()"><br><br>
+
+    <script>
+        function teste() {
+            var teste = Number(document.getElementById("idPrimeiroNumero").value)
+            var output = document.getElementById("idOut")
+            
+            if (teste > 20) {
+                output.value = "Maior do que 20"    
+            } else if (teste == 20) {
+                output.value = "Igual a 20"
+            } else {
+                output.value = "Menor do que 20"
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

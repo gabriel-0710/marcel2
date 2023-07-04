@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6 - lista 1</title>
+
+</head>
+<body>
+    
+    <fieldset>
+        <legend><b>Calculadora de Média</b></legend>
+        <form action="">
+           
+            <label for="idNota1">Nota 1</label><br>
+            <input type="number" id="idNota1" name="nmNota1"><br><br>
+
+            <label for="idNota2">Nota 2</label><br>
+            <input type="number" id="idNota2" name="nmNota2"><br><br>
+
+            <label for="idNota3">Nota 3</label><br>
+            <input type="number" id="idNota3" name="nmNota3"><br><br>
+
+            <label for="idNota4">Nota 4</label><br>
+            <input type="number" id="idNota4" name="nmNota3"><br><br>
+
+            <input type="button" value="Calcular Média" onclick="media()"><br><br>
+
+            <label for="idResultado">Resultado:</label><br>
+            <input type="text" id="idResultado" name="nmResultado"><br><br>
+
+
+
+
+
+
+        </form>
+    </fieldset>
+
+    <script>
+          function media() {
+            var nota1 = Number(document.getElementById("idNota1").value)
+            var nota2 = Number(document.getElementById("idNota2").value)
+            var nota3 = Number(document.getElementById("idNota3").value)
+            var nota4 = Number(document.getElementById("idNota4").value)
+            var resultado = document.getElementById("idResultado")
+
+            resultado.value = (nota1 + nota2 + nota3 + nota4) / 4 
+        }
+    
+      
+
+
+
+    </script>
+
+
+</body>
+</html>

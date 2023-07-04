@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  
+
+
+  <script>
+    const notas = []
+    let totalNotas = 0
+    let notaMaxima = 0
+    let indiceNotaMaxima = -1
+    let totalAcimaMedia = 0
+
+    for (let i = 0; i < 10; i++) {
+
+      const nota = parseFloat(prompt("Digite a nota"));
+
+      notas.push(nota)
+
+      totalNotas += nota
+
+
+      if (nota >= 7) {
+        totalAcimaMedia++
+      }
+
+      if (nota > notaMaxima) {
+        notaMaxima = nota
+        indiceNotaMaxima = i
+      }
+    }
+
+    const media = (totalNotas / notas.length).toFixed(2)
+
+    console.log("A média da turma foi: " + media)
+    console.log(totalAcimaMedia + " alunos estão acima da média.")
+    console.log("A maior nota foi: " + notaMaxima)
+    console.log("As maiores notas aparecem na posição " + indiceNotaMaxima)
+
+
+
+  </script>
+
+
+</body>
+
+</html>

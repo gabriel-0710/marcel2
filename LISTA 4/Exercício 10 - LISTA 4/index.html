@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="idLimiteInf">Limite Inferior</label><br>
+    <input type="number" id="idLimiteInf" name="nmLimiteInf"><br><br>
+
+    <label for="idLimiteSup">Limite Superior</label><br>
+    <input type="number" id="idLimiteSup" name="nmLimiteSup"><br><br>
+
+    <input type="radio" id="idPar" name="nmChoice">
+    <label for="idPar">Par</label>
+
+    <input type="radio" id="idImpar" name="nmChoice">
+    <label for="idImpar">Impar</label><br><br>
+
+    <input type="button" value="Contar While" onclick="contawhile()"><br><br>
+    <input type="button" value="Contar For" onclick="contafor()"><br><br>
+
+    <output id="idOut"></output>
+
+<script>
+
+    function contarwhile() {
+
+        let limiteInf = Number(document.getElementById("idLimiteInf").value)
+        let limiteSup = Number(document.getElementById("IdLimiteSup").value)
+        let numPar = document.getElementById("idPar").checked
+       // let numImpar = document.getElementById("idImpar").checked
+        let numerosPares = ""
+        let numerosImpares = ""
+        let cont = limiteInf
+
+        
+        limiteSup++
+        while (cont < limiteSup) {
+            if ((cont % 2) == 0) {
+                numerosPares = numerosPares + cont + " "
+            }else{
+                numerosImpares = numerosImpares + cont + " "
+            }
+
+            cont++
+        }
+
+        if (numPar) {
+            document.getElementById("idOut").value = "Numeros Pares " + numerosPares
+        }else{
+            document.getElementById("idOut").value = "Numeros Impares " + numerosImpares
+        }
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

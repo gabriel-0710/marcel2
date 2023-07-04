@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      /*css reset*/
+      margin: 0;
+      padding: 0;
+    }
+
+    .background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url(img/iamgeme21.png);
+    }
+
+    .calculadora {
+      /*cor fundo da calc*/
+      background-color: cornflowerblue;
+      /*bordas*/
+      border: 2px;
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*margin e padding*/
+      margin: 15px;
+      padding: 10px;
+      width: 200px;
+      /*posiçao na tela
+            
+            -aqui usei 15% no top e 40% no left, e na minha tela ficava exatamente no meio a calculadora
+            -porém, quando diminuia a tela, no tamanho de um tablet por exemplo, já ficava torto,
+            posicionado mais pra direita. Pesquisei como resolver e achei o transform. Pelo o que eu vi,
+            existem vários tipos, podendo deixar os objetos inclinados, rotacionar, dar efeito 3D mesmo.
+            Essa propriedade translate dentro do transform é a mais simples, pra objetos 2d.
+
+            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            dia 09/06: descobri como não usar isso (linhas 16-19)
+            */
+    }
+
+    .botao {
+      /*bordas*/
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*margin / padding*/
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      margin-top: 5px;
+      /*fonte specs*/
+      font-size: 30px;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      /*cursor mao*/
+      cursor: pointer;
+    }
+
+    .botao2 {
+      /*cor de fundo*/
+      background-color: aquamarine;
+      /*bordas*/
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*padding / margin*/
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      margin-top: 5px;
+      /*fonte specs*/
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Courier New", Courier, monospace;
+      /*cursor maozinha*/
+      cursor: pointer;
+    }
+
+    .botao3 {
+      /*cor de fundo*/
+      background-color: aquamarine;
+      /*tamanho*/
+      width: 39.5%;
+      /*bordas*/
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*padding / margin*/
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      margin-top: 5px;
+      /*fonte specs*/
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Courier New", Courier, monospace;
+      /*cursor maozinha*/
+      cursor: pointer;
+    }
+
+    .botao4 {
+    /*cor de fundo*/
+    background-color: aquamarine;
+      /*tamanho*/
+      width: 48.5%;
+      /*bordas*/
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*padding / margin*/
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      margin-top: 5px;
+      /*fonte specs*/
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Courier New", Courier, monospace;
+      /*cursor maozinha*/
+      cursor: pointer;
+    }
+
+    /*Botao HOVER*/
+    .botao:hover {
+      background-color: forestgreen;
+    }
+
+    .botao2:hover {
+      background-color: forestgreen;
+    }
+
+    .botao3:hover {
+      background-color: forestgreen;
+    }
+
+    .botao4:hover {
+      background-color: forestgreen;
+    }
+
+    /* Desativar as setas do input number */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    #result,
+    #result2 {
+      /* tamanho do input tela*/
+      height: 30px;
+      width: 188px;
+      /*efeitos de bordas tela*/
+      border: 2px;
+      border-style: solid;
+      border-radius: 15px;
+      border-color: black;
+      /*fonte*/
+      font-size: 35px;
+      font-weight: bold;
+      text-align: center;
+      -moz-appearance: textfield;
+      /*espaço*/
+      margin-bottom: 5px;
+    }
+
+    #result:disabled,
+    #result2:disabled {
+      /*Cor do fundo do input quando usamos disabled*/
+      background-color: white;
+      /*Cor da letra do input quando desabilitado*/
+      color: black;
+    }
+
+    #titulo {
+      align-items: center;
+      /*fonte specs*/
+      font-size: 25px;
+      font-weight: bolder;
+      color: black;
+      /*sombra da fonte*/
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-fill-color: black;
+      /*espaço*/
+      margin-bottom: 5px;
+    }
+
+    /*Usei para esconder os radio buttons, sabendo que usei eles como parte da lógica apenas*/
+    .esconder {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background">
+    <div class="calculadora">
+      <div>
+        <p id="titulo">CALCULADORA</p>
+        <input type="number" id="result2" name="nmResult2" disabled value="" />
+        <input type="number" id="result" name="nmResult" disabled value="" />
+      </div>
+
+      <div class="esconder">
+        <input type="radio" id="radioSoma" name="nmOpe" class="radio" />
+        <label for="radioSoma">+</label>
+        <input type="radio" id="radioSub" name="nmOpe" class="radio" />
+        <label for="radioSub">-</label>
+        <input type="radio" id="radioMulti" name="nmOpe" class="radio" />
+        <label for="radioMulti">*</label>
+        <input type="radio" id="radioDiv" name="nmOpe" class="radio" />
+        <label for="radioDiv">/</label>
+      </div>
+
+      <div>
+        <input type="button" value="C" id="botaoReset" name="nmReset" class="botao4" onclick="limpar()" />
+        <input type="button" value="<" id="apagar" name="nmApagar" class="botao2" onclick="apagar()" />
+        <input type="button" value="/" id="botaoDiv" name="nmDiv" class="botao2" onclick="divide()" />
+      </div>
+      <div>
+        <input type="button" value="7" id="botao7" name="nm7" class="botao" onclick="numero('7')" />
+        <input type="button" value="8" id="botao8" name="nm8" class="botao" onclick="numero('8')" />
+        <input type="button" value="9" id="botao9" name="nm9" class="botao" onclick="numero('9')" />
+        <input type="button" value="-" id="botaoSub" name="nmSub" class="botao2" onclick="subtrai()" />
+      </div>
+
+      <div>
+        <input type="button" value="4" id="botao4" name="nm4" class="botao" onclick="numero('4')" />
+        <input type="button" value="5" id="botao5" name="nm5" class="botao" onclick="numero('5')" />
+        <input type="button" value="6" id="botao6" name="nm6" class="botao" onclick="numero('6')" />
+        <input type="button" value="+" id="botaoAdd" name="nmAdd" class="botao2" onclick="soma()" />
+      </div>
+
+      <div>
+        <input type="button" value="1" id="botao1" name="nm1" class="botao" onclick="numero('1')" />
+        <input type="button" value="2" id="botao2" name="nm2" class="botao" onclick="numero('2')" />
+        <input type="button" value="3" id="botao3" name="nm3" class="botao" onclick="numero('3')" />
+        <input type="button" value="*" id="botaoMulti" name="nmMulti" class="botao2" onclick="multiplica()" />
+      </div>
+
+      <div>
+        <input type="button" value="0" id="botao0" name="nm0" class="botao3" onclick="numero('0')" />
+        <input type="button" value="00" id="botao00" name="nm00" class="botao2" onclick="numero('00')" />
+        <!-- Não consegui fazer funcionar o ponto
+        <input type="button" value="." id="botaoPonto" name="nmPonto" class="botao2" onclick=""/>
+        -->
+        <input type="button" value="=" id="botaoIgual" name="nmIgual" class="botao2" onclick="igual()" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+var resultado;
+var resultado2 = Number(document.getElementById("result2").value);
+
+function jogaPraCima() {
+  let resultado = Number(document.getElementById("result").value);
+  if (!resultado2) {
+    document.getElementById("result2").value = resultado;
+  }
+  document.getElementById("result").value = "";
+}
+
+function soma() {
+  jogaPraCima()
+  document.getElementById("result").value = "";
+  document.getElementById("radioSoma").checked = true;
+}
+
+function multiplica() {
+  jogaPraCima();
+  document.getElementById("radioMulti").checked = true;
+}
+
+function subtrai() {
+ jogaPraCima();
+  document.getElementById("radioSub").checked = true;
+}
+
+function divide() {
+  jogaPraCima();
+  document.getElementById("radioDiv").checked = true;
+}
+
+function igual() {
+  let somaCheck = document.getElementById("radioSoma").checked;
+  let subCheck = document.getElementById("radioSub").checked;
+  let multiCheck = document.getElementById("radioMulti").checked;
+  let divCheck = document.getElementById("radioDiv").checked;
+
+  let result = Number(document.getElementById("result").value);
+  let result2 = Number(document.getElementById("result2").value);
+  var saida = document.getElementById("result2");
+
+  if (somaCheck) {
+    saida.value = result2 + result;
+    document.getElementById("result").value = "";
+    resultado2 = Number(saida.value);
+  } else if (subCheck) {
+    saida.value = result2 - result;
+    document.getElementById("result").value = "";
+    resultado2 = Number(saida.value);
+  } else if (multiCheck) {
+    saida.value = result2 * result;
+    document.getElementById("result").value = "";
+    resultado2 = Number(saida.value);
+  } else {
+    saida.value = result2 / result;
+    document.getElementById("result").value = "";
+    resultado2 = Number(saida.value);
+  }
+
+  console.log(result);
+  console.log(result2);
+}
+
+function limpar() {
+  document.getElementById("result").value = "";
+  document.getElementById("result2").value = "";
+  resultado2 = 0;
+}
+
+function numero(num) {
+  let colocar = document.getElementById("result").value;
+  document.getElementById("result").value = colocar + num;
+}
+
+function apagar() {
+  let tela = String(document.getElementById("result").value);
+  document.getElementById("result").value = tela.substring(0, tela.length - 1);
+}
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC / Peso Ideal</title>
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <legend>Cálculo de IMC</legend><br>
+
+            <label for="idAltura">Altura em Metros:</label>  <br>  
+            <input type="number" id="idAltura" name="nmAltura"><br><br>
+
+            <label for="idPeso">Peso em Kg:</label><br>
+            <input type="number" id="idPeso" name="nmPeso"><br><br>
+
+            <input type="button" value="Calcular" onclick="imc()"><br><br>
+
+            <label for="idResultado">Resultado:</label><br>
+            <input type="text" id="idResultado" name="nmResultado"><br>
+
+
+
+
+
+        </form>
+    </fieldset><br>
+
+    <fieldset>
+        <form action="">
+            <legend>Cálculo do Peso Ideal:</legend><br>
+
+            <label for="idAlt">Altura:</label><br>
+            <input type="number" id="idAlt" name="nmAlt"><br><br>
+
+            <input type="button" value="Homem" onclick="idealHomem()">
+            <input type="button" value="Mulher" onclick="idealMulher()"><br><br>
+
+            <label for="idRes">Resultado:</label><br>
+            <input type="text" id="idRes" name="nmRes"><br><br>
+
+
+        </form>
+    </fieldset>
+
+    <script>
+        var altura
+        var peso
+        var resultado
+
+        function imc() {
+            altura = Number(document.getElementById("idAltura").value)
+            peso = Number(document.getElementById("idPeso").value)
+            resultado = document.getElementById("idResultado")
+
+            resultado.value = peso / altura**2
+
+        }
+
+        var alt
+        var res
+        
+
+        function idealHomem() {
+            alt = Number(document.getElementById("idAlt").value)
+            res = document.getElementById("idRes")
+
+            res.value = (72.7*alt) - 58
+
+        }
+
+        function idealMulher() {
+            alt = Number(document.getElementById("idAlt").value)
+            res = document.getElementById("idRes")
+
+            res.value = (62.1*alt) - 44.7
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="idNome">Nome:</label><br>
+    <input type="text" id="idNome" name="nome"/><br><br>
+
+    <label for="idSelect">Selecione:</label><br>
+
+    <select id="idSelect">
+        <option value=" " selected> </option>
+        <option value="Mulher">Mulher</option>
+        <option value="Homem">Homem</option>
+    </select><br><br>
+    
+    <label for="idSalario">Salário:</label><br/>
+    <input type="text" id="idSalario" name="salario" /><br><br>
+
+    <input type="button" value="Salvar" id="idSalvar" onclick="salvar()"/><br><br>
+
+    <input type="button" value="Relatorio Total" id="idRelatorio" onclick="relatorio()"/><br><br>
+
+    <output id="idOut"></output><br/><br/>
+    <output id="idOut2"></output>
+
+    <script>
+        var nomes = []
+        var sexos = []
+        var salarios = []
+        var listaNomes = []
+        const limite = 5000
+
+        function salvar() {
+            const nome = document.getElementById("idNome").value
+            const sexo = document.getElementById("idSelect").value         
+            const salario = document.getElementById("idSalario").value
+
+            nomes.push(" " + nome)
+            sexos.push(sexo)
+            salarios.push(salario)
+
+            console.log(nomes, sexos, salarios)
+            
+            if ((salario < limite) && (sexo === 'Mulher') ) {
+                listaNomes.push(" " + nome)
+            }
+
+            }
+
+        function relatorio() {
+            
+            document.getElementById("idOut").value = "Cadastrados:  " + nomes
+            document.getElementById("idOut2").value = "Menores salários: " + listaNomes
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+<!--
+
+    //dados.push(nome , sexo , salario )
+            
+//dados.push({nome: nome , sexo: sexo , salario: salario})
+
+
+// dados.forEach(funcionario => {
+//     if(funcionario.salario < limite){
+//         abaixo5k.push(funcionario.nome)
+//     }
+// })
+
+//console.log(dados)
+
+-->

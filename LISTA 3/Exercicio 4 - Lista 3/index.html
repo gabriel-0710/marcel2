@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="idNumero">Número:</label><br>
+    <input type="number" id="idNumero" name="nmNumero"><br><br>
+
+    <output id="idOut"></output><br><br>
+
+    <input type="button" value="Teste" onclick="intervalo()"><br><br>
+
+    <script>
+
+        function intervalo() {
+
+            var numero = Number(document.getElementById("idNumero").value)
+            var output = document.getElementById("idOut")
+
+            if (numero > 30 && numero < 90){
+                output.value = "O número está no intervalo indicado"
+            } else {
+                output.value = "O número não está no intervalo indicado"
+            }
+            
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

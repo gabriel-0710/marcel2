@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idNumero">Número:</label><br>
+        <input type="number" id="idNumero" name="nmNumero"><br><br>
+
+        <input type="button" value="Verificar" onclick="verificar()"><br><br>
+
+        <output id="idOut">O número verificado é:</output><br><br>
+
+    </form>
+
+    <script>
+
+        function verificar() {
+
+            var numero = Number(document.getElementById("idNumero").value)
+            var operacao = numero % 2
+
+            if (operacao != 0) {
+                document.getElementById("idOut").value = "O número verificado é ímpar"
+
+            } else {
+                document.getElementById("idOut").value = "O número verificado é par"
+            }
+
+
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

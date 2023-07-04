@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC / Peso Ideal</title>
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <legend>Cálculo do Peso Ideal:</legend><br>
+
+            <label for="idAlt">Altura:</label><br>
+            <input type="number" id="idAlt" name="nmAlt"><br><br>
+
+            <input type="radio" name="nmGenero" id="idFem">
+            <label for="idFem">Feminino</label>
+
+            <input type="radio" name="nmGenero" id="idMas">
+            <label for="idMas">Masculino</label><br><br>
+
+            <input type="button" value="Calcular" onclick="calcular()"><br><br>
+
+            <label for="idRes">Resultado:</label><br>
+            <input type="text" id="idRes" name="nmRes"><br><br>
+
+
+        </form>
+    </fieldset>
+
+    <script>
+      
+        function calcular() {
+            var altura = Number(document.getElementById("idAlt").value)
+            var masculino = document.getElementById("idMas").checked
+            var feminino = document.getElementById("idFem").checked
+            var resultado = document.getElementById("idRes")
+            var pesoIdeal
+
+            
+            if (masculino == true) {
+
+                pesoIdeal = ((72.7 * altura) - 58).toFixed(2)
+
+            } else {
+                pesoIdeal = ((62.1*altura) - 44.7).toFixed(2)
+            }
+           
+
+            resultado.value = pesoIdeal
+
+        }
+
+
+    </script>
+</body>
+</html>

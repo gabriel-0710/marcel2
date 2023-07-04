@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="idl1">Lado 1:</label><br>
+    <input type="number" id="idl1" name="nml1"><br><br>
+
+    <label for="idl2">Lado 2:</label><br>
+    <input type="number" id="idl2" name="nml2"><br><br>
+
+    <label for="idl3">Lado 3:</label><br>
+    <input type="number" id="idl3" name="nml3"><br><br>
+
+    <input type="button" value="Calcular" onclick="calcular()"><br><br>
+
+    <output id="idOut"></output><br><br>
+
+
+
+
+    <script>
+
+        function calcular() {
+
+            var lado1 = Number(document.getElementById("idl1").value)
+            var lado2 = Number(document.getElementById("idl2").value)
+            var lado3 = Number(document.getElementById("idl3").value)
+
+            soma1 = lado1 + lado2
+            soma2 = lado1 + lado3
+            soma3 = lado2 + lado3
+
+            if (soma1 > lado3) {
+                document.getElementById("idOut").value = "Sim, é possível fazer um triângulo!"
+            } else {
+                document.getElementById("idOut").value = "Não,  não é possível fazer um triângulo!"
+            }
+
+           
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <output id="idOut"></output><br><br>
+    <output id="idOut2"></output><br><br>
+
+    <script>
+
+        var contador = 0
+        var teste = 100
+        var texto = " "
+
+        var out = document.getElementById("idOut")
+
+        while (contador <= 20) {
+            texto = texto + teste + " "
+            teste = teste - 5
+            contador++
+
+            out.value = "inicio " + texto + " Fim"
+        }
+
+        
+        
+        var out2 = document.getElementById("idOut2")
+        var texto2 = ""
+
+        for (let contador = 100; contador >= 0; contador -= 5) {
+            texto2 = texto2 + contador + " "        
+            out2.value = "inicio " + texto2 + " fim"
+            
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <output id="idOut"></output><br><br>
+    <output id="idOut2"></output><br><br>
+    
+
+
+    <script>
+        var contador = 0
+        var teste = 0
+        var texto = ""
+        var out = document.getElementById("idOut")
+
+        while (contador <= 4) {
+            teste = teste + 4
+            texto = texto + teste + " "
+            contador++  //SERVE PRA FAZER O PROGARMA RODAR
+            out.value = "Inicio " + texto + "Fim"
+
+        }
+
+
+        var teste2 = 0
+        var texto2 = ""
+        var out2 = document.getElementById("idOut2")
+
+
+        for (let index = 0; index <= 4; index++) { //SERVE PRA FAZER O PROGRAMA RODAR
+            teste2 = teste2 + 4
+            texto2 = texto2 + teste2 + " "
+
+            out2.value = "inicio " + texto2 + " Fim"
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Exercicio 1 - Lista 2</legend>
+        <form action="">
+
+            <label for="idNumero">Número:</label><br>
+            <input type="number" name="nmNumero" id="idNumero"><br><br>
+
+            <output id="idOut">Número final:</output><br><br>
+
+            <input type="button" value="Calcular" onclick="calcular()">
+
+
+
+        </form>
+    </fieldset>
+
+
+    <script>
+
+        function calcular() {
+
+            var numero = Number(document.getElementById("idNumero").value)
+            var divisao = numero / 2
+
+            if (numero > 20) {
+                document.getElementById("idOut").value = "Número final: " + divisao
+            } else {
+                document.getElementById("idOut").value = "Número final: " + numero
+
+            }
+   
+
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

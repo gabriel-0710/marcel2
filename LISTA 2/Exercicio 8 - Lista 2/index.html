@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <label for="idAno">Insina o Ano:</label><br>
+        <input type="number" id="idAno" name="nmAno"><br><br>
+
+        <input type="button" value="Verificar" onclick="bissex()"><br><br>
+
+        <output id="idOut">O ano é bissexto?</output><br><br>
+
+        
+    <script>
+
+        function bissex() {
+
+        var ano = Number(document.getElementById("idAno").value)
+
+        if ((ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0))) {
+            document.getElementById("idOut").value = "O ano é bissexto!"
+
+        } else {
+            document.getElementById("idOut").value = "O ano não é bissexto!"
+        }
+
+        }
+
+
+        
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

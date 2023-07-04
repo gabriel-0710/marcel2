@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <form action="">
+            <legend>Calculadora</legend><br>
+            <label for="idNum1">Primeiro número</label><br>
+            <input type="number" id="idNum1" name="nmNum1"><br><br>
+
+            <label for="idNum2">Segundo Número</label><br>
+            <input type="number" id="idNum2" name="nmNum2"><br><br>
+
+            <label for="idResul">Resultado:</label><br>
+            <input type="text" id="idResul" name="nmResul"><br><br>
+
+            <input type="button" value="Somar" onclick="somar()">
+            <input type="button" value="Subtrair" onclick="subtrair()">
+            <input type="button" value="Multiplicar" onclick="multiplicar()">
+            <input type="button" value="Dividir" onclick="dividir()"><br>
+
+            
+        </form>
+    </fieldset><br>
+
+
+    <fieldset>
+                <form action="">
+            <legend><h3>Exercício 3</h3></legend>
+            <!--SUBTRAÇÃO-->
+            <fieldset>
+                <legend><b>Subtração</b></legend>
+                <label for="idSub1">Subtraia:</label><br>
+                <input type="number" id="idSub1" name="nmSub1"><br><br>
+
+                <label for="idSub2">De:</label><br>
+                <input type="number" id="idSub2" name="nmSub2"><br><br>
+
+                <input type="button" value="Subtrai!" onclick="subtraiAi()"><br><br>
+
+                <label for="idSub3">Resultado:</label><br>
+                <input type="text" id="idSub3" name="nmSub3"><br><br>
+            </fieldset><br>
+            
+            <!--MULTIPLICAÇÃO-->
+            <fieldset>
+                <legend><b>Multiplicação</b></legend>
+                <label for="idMulti1">Multiplique:</label><br>
+                <input type="number" id="idMulti1" name="nmMulti1"><br><br>
+
+                <label for="idMulti2">Por:</label><br>
+                <input type="number" id="idMulti2" name="nmMulti2"><br><br>
+
+                <input type="button" value="Multiplica!" onclick="multiplicaAi()"><br><br>
+
+                <label for="idMulti3">Resultado:</label><br>
+                <input type="number" id="idMulti3" name="nmMulti3"><br><br>
+
+
+            </fieldset><br>
+            
+            <!--DIVISÃO-->
+            <fieldset>
+                <legend><b>Divisão</b></legend>
+                <label for="idDivi1">Divida:</label><br>
+                <input type="number" id="idDivi1" name="nmDivi1"><br><br>
+
+                <label for="idDivi2">Por:</label><br>
+                <input type="number" id="idDivi2" name="nmDivi2"><br><br>
+
+                <input type="button" value="Divide!" onclick="divideAi()"><br><br>
+
+                <label for="idDivi3">Resultado:</label><br>
+                <input type="text" id="idDivi3" name="nmDivi3"><br><br>
+
+            </fieldset>
+            
+        </form>
+    </fieldset>
+
+    <script>
+        var sub1
+        var sub2
+        var sub3
+
+        function subtraiAi() {
+            sub1 = parseFloat(document.getElementById("idSub1").value)
+            sub2 = parseFloat(document.getElementById("idSub2").value)
+            sub3 = document.getElementById("idSub3")
+
+            sub3.value = sub1 - sub2
+        }
+        
+        var multi1
+        var multi2
+        var multi3
+
+        function multiplicaAi() {
+            multi1 = parseFloat(document.getElementById("idMulti1").value)
+            multi2 = parseFloat(document.getElementById("idMulti2").value)
+            multi3 = document.getElementById("idMulti3")
+
+            multi3.value = multi1 * multi2
+        }
+
+        var div1
+        var div2
+        var div3
+
+        function divideAi() {
+            div1 = parseFloat(document.getElementById("idDivi1").value)
+            div2 = parseFloat(document.getElementById("idDivi2").value)
+            div3 = document.getElementById("idDivi3")
+
+            div3.value = div1 / div2
+        }
+        var num1
+        var num2
+        var resultado
+
+        function somar() {
+                num1 = Number(document.getElementById("idNum1").value)
+                num2 = Number(document.getElementById("idNum2").value)
+                resultado = document.getElementById("idResul")
+
+                resultado.value = num1 + num2
+               
+                 
+            }
+
+            function subtrair() {
+                num1 = Number(document.getElementById("idNum1").value)
+                num2 = Number(document.getElementById("idNum2").value)
+                resultado = document.getElementById("idResul")
+
+                resultado.value = num1 - num2
+               
+                 
+            }
+
+            function dividir() {
+                num1 = Number(document.getElementById("idNum1").value)
+                num2 = Number(document.getElementById("idNum2").value)
+                resultado = document.getElementById("idResul")
+
+                resultado.value = num1 / num2
+               
+                 
+            }
+
+            function multiplicar() {
+                num1 = Number(document.getElementById("idNum1").value)
+                num2 = Number(document.getElementById("idNum2").value)
+                resultado = document.getElementById("idResul")
+
+                resultado.value = num1 * num2
+               
+                 
+            }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

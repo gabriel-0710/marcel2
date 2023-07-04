@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="idPrimeiroNumero">Primeiro número:</label><br>
+    <input type="number" id="idPrimeiroNumero" name="nmPrimeiroNumero"><br><br>
+
+    <label for="idSegundoNumero">Segundo número:</label><br>
+    <input type="number" id="idSegundoNumero" name="nmSegundoNumero"><br><br>
+
+    <label for="idTerceiroNumero">Terceiro número:</label><br>
+    <input type="number" id="idTerceiroNumero" name="nmTerceiroNumero"><br><br>
+
+    <output id="idOut"></output><br><br>
+
+    <input type="button" value="Testar" onclick="testar()"><br><br>
+
+    </form>
+    
+
+    <script>
+            
+            function testar() {
+
+
+                var primeiro = Number(document.getElementById("idPrimeiroNumero").value)
+                var segundo = Number(document.getElementById("idSegundoNumero").value)
+                var terceiro = Number(document.getElementById("idTerceiroNumero").value)
+                var output = document.getElementById("idOut")
+
+
+
+
+                if (primeiro > segundo && segundo > terceiro) {
+                output.value = primeiro + segundo + terceiro
+                console.log("Primeiro/segundo/terceiro")
+
+                } 
+
+                if (primeiro > terceiro && terceiro > segundo) {
+                output.value = primeiro + terceiro + segundo
+                console.log("primeiro + terceiro + segundo")
+}
+                if (segundo > primeiro && primeiro > terceiro) {
+                output.value = segundo + primeiro + terceiro
+                console.log("segundo + primeiro + terceiro")
+            }
+                if (segundo > terceiro && terceiro > primeiro) {
+                output.value = segundo + terceiro + primeiro
+                console.log("segundo + terceiro + primeiro")
+            }
+                if (terceiro > primeiro && primeiro > segundo) {
+                output.value = terceiro + primeiro + segundo
+                console.log("terceiro + primeiro + segundo")
+            }
+                if (terceiro > segundo && segundo > primeiro) {
+                output.value = terceiro + segundo + primeiro
+                console.log("terceiro + segundo + primeiro")
+            } 
+
+        }
+            
+            
+
+    </script>
+
+</body>
+</html>
